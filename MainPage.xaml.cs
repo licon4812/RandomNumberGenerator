@@ -25,12 +25,22 @@ namespace RandomNumberGenerator
         public MainPage()
         {
             this.InitializeComponent();
+            MinInput.Text = "0";
+            MaxInput.Text = "100";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
-            RandomNumber.Text = random.Next(Int32.Parse(MinInput.Text), Int32.Parse(MaxInput.Text)).ToString();
+            if (int.TryParse(MinInput.Text, out int min) && int.TryParse(MaxInput.Text, out int max))
+            {
+                Random random = new Random();
+                int randomNumber = random.Next(min, max);
+                RandomNumber.Text = randomNumber.ToString();
+            }
+            else
+            {
+                RandomNumber.Text = "Invalid input";
+            }
         }
     }
 }
