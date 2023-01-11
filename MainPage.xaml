@@ -30,12 +30,12 @@
                 <ColumnDefinition Width="271*"/>
                 <ColumnDefinition Width="471*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Margin="14,14,145,94" Grid.ColumnSpan="2"></TextBlock>
+            <TextBlock Name="RandomNumber" Margin="14,14,145,94" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="48"></TextBlock>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="364,0,0,0" Grid.Column="1">
                 <TextBlock x:Name="Min" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Min" Height="34" Width="64" FontSize="20" RequestedTheme="Default"/>
-                <TextBox HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBox Name="MinInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
                 <TextBlock x:Name="Max" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Max" Height="22" Width="51" FontSize="20" RequestedTheme="Default"/>
-                <TextBox HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBox Name="MaxInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <Button Grid.Column="0" Content="Generate" Margin="0,383,0,0" VerticalAlignment="Top" Height="86" Width="932" Click="Button_Click" Background="#0094FF" Grid.ColumnSpan="2"/>
         </Grid>

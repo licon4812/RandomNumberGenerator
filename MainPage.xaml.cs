@@ -29,7 +29,8 @@ namespace RandomNumberGenerator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Random random = new Random();
+            RandomNumber.Text = random.Next(Int32.Parse(MinInput.Text), Int32.Parse(MaxInput.Text)).ToString();
         }
     }
 }
