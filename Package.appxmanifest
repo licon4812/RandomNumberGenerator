@@ -8,14 +8,14 @@
 
   <Identity
     Name="5066a1b2-1440-4cec-8f02-4c0dafe58d30"
-    Publisher="CN=jalic"
+    Publisher="CN=licon4812"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="5066a1b2-1440-4cec-8f02-4c0dafe58d30" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>RandomNumberGenerator</DisplayName>
-    <PublisherDisplayName>jalic</PublisherDisplayName>
+    <PublisherDisplayName>licon4812</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
