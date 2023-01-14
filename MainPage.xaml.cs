@@ -33,9 +33,16 @@ namespace RandomNumberGenerator
         {
             if (int.TryParse(MinInput.Text, out int min) && int.TryParse(MaxInput.Text, out int max))
             {
-                Random random = new Random();
-                int randomNumber = random.Next(min, max);
-                RandomNumber.Text = randomNumber.ToString();
+                if (min < max)
+                {
+                    Random random = new Random();
+                    int randomNumber = random.Next(min, max + 1);
+                    RandomNumber.Text = randomNumber.ToString();
+                }
+                else
+                {
+                    RandomNumber.Text = "Min value must be less than max value";
+                }
             }
             else
             {
