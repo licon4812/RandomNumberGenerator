@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -37,8 +40,23 @@ class MainActivity : AppCompatActivity() {
         ), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        findViewById<TextView>(R.id.min).text = "0"
+        findViewById<TextView>(R.id.max).text = "100"
     }
 
+    fun generateRandomNumber(view: View) {
+        val min = findViewById<EditText>(R.id.min)
+        val max = findViewById<EditText>(R.id.max)
+        val random = findViewById<TextView>(R.id.result)
+        val minInt = min.text.toString().toInt()
+        val maxInt = max.text.toString().toInt()
+        if (minInt > maxInt) {
+            random.text = "Min must be less than Max"
+            return
+        }
+        val randomInt = (minInt..maxInt).random()
+        random.text = randomInt.toString()
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
