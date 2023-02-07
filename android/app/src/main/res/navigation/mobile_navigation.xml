@@ -10,5 +10,10 @@
         android:name="com.alickollisofware.randomnumbergenerator.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_decision"
+        android:name="com.alickollisofware.randomnumbergenerator.DecisionFragment"
+        android:label="@string/menu_decision"
+        tools:layout="@layout/fragment_decision" />
 
 </navigation>
