@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_decision"
-        android:name="com.alickollisofware.randomnumbergenerator.DecisionFragment"
+        android:name="com.alickollisofware.randomnumbergenerator.decision.DecisionFragment"
         android:label="@string/menu_decision"
         tools:layout="@layout/fragment_decision" />
 

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DecisionFragment">
+    tools:context=".decision.DecisionFragment">
 
     <TextView
         android:id="@+id/choices"
@@ -36,7 +36,7 @@
         android:layout_width="422dp"
         android:layout_height="73dp"
         android:layout_marginTop="8dp"
-        android:onClick="choiceDecision"
+        android:onClick="generateRandomDecision"
         android:text="Generate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
