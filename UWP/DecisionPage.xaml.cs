@@ -17,23 +17,7 @@ namespace RandomNumberGenerator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(MinInput.Text, out int min) && int.TryParse(MaxInput.Text, out int max))
-            {
-                if (min < max)
-                {
-                    Random random = new Random();
-                    int randomNumber = random.Next(min, max + 1);
-                    RandomNumber.Text = randomNumber.ToString();
-                }
-                else
-                {
-                    RandomNumber.Text = "Min value must be less than max value";
-                }
-            }
-            else
-            {
-                RandomNumber.Text = "Invalid input";
-            }
+            
         }
 
         private void NavigationView_ItemInvoked(Windows.UI.Xaml.Controls.NavigationView sender, Windows.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)

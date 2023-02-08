@@ -58,10 +58,9 @@
                 <ColumnDefinition Width="271*"/>
                 <ColumnDefinition Width="471*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Name="RandomNumber" Margin="14,14,145,94" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="48"></TextBlock>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="364,0,0,0" Grid.Column="1">
-                <ListBox x:Name="List" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top"></ListBox>
-            </StackPanel>
+            <TextBlock Grid.Column="0" Name="RandomDecision" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Top" FontSize="48"></TextBlock>
+            <TextBlock Grid.Column="0" Text="Enter your options here separated by a ;" Margin="342,274,321,0" VerticalAlignment="Top" Height="31" Width="271" TextAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox Grid.Column="0" Name="DecisionOptions" VerticalAlignment="Top" Height="75" TextWrapping="Wrap" TextAlignment="Center" Margin="6,305,2,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.501,0.418"/>
             <Button Grid.Column="0" Content="Generate" Margin="0,383,0,0" VerticalAlignment="Top" Height="86" Width="932" Click="Button_Click" Background="#0094FF" Grid.ColumnSpan="2"/>
         </Grid>
     </Grid>
