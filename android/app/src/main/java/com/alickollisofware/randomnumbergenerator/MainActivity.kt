@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -15,6 +16,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.alickollisofware.randomnumbergenerator.databinding.ActivityMainBinding
+import com.alickollisofware.randomnumbergenerator.decision.DecisionFragment
 import com.google.android.material.navigation.NavigationView
 
 
@@ -57,6 +59,27 @@ class MainActivity : AppCompatActivity() {
         val randomInt = (minInt..maxInt).random()
         random.text = randomInt.toString()
     }
+
+    fun generateRandomDecision(view: View) {
+        val decisions = DecisionFragment.decisions
+        val random = findViewById<TextView>(R.id.result)
+        val randomInt = (0 until decisions.size).random()
+        if(decisions.isEmpty()) {
+            random.text = "No decisions"
+            return
+        } else if(decisions.size >= 1){
+            random.text = decisions[randomInt].toString()
+        }
+    }
+    
+    fun addDecision(view: View) {
+        val decisions = DecisionFragment.decisions
+        val decision = findViewById<EditText>(R.id.choice)
+        decisions.add(decision.text.toString())
+        val listView = findViewById<ListView>(R.id.choicesList)
+        decision.text.clear()
+    }
+    
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
