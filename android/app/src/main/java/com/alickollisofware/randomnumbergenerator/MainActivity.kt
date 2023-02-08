@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
@@ -63,21 +64,36 @@ class MainActivity : AppCompatActivity() {
     fun generateRandomDecision(view: View) {
         val decisions = DecisionFragment.decisions
         val random = findViewById<TextView>(R.id.result)
-        val randomInt = (0 until decisions.size).random()
         if(decisions.isEmpty()) {
             random.text = "No decisions"
             return
         } else if(decisions.size >= 1){
-            random.text = decisions[randomInt].toString()
+            val randomInt = (0 until decisions.size).random()
+            random.text = decisions[randomInt]
         }
     }
     
     fun addDecision(view: View) {
         val decisions = DecisionFragment.decisions
         val decision = findViewById<EditText>(R.id.choice)
+        if(decision.text.isEmpty()) {
+            return
+        }
         decisions.add(decision.text.toString())
         val listView = findViewById<ListView>(R.id.choicesList)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, decisions )
+        adapter.notifyDataSetChanged()
+        listView.adapter = adapter
         decision.text.clear()
+    }
+
+    fun clearDecisions(view: View) {
+        val decisions = DecisionFragment.decisions
+        decisions.clear()
+        val listView = findViewById<ListView>(R.id.choicesList)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, decisions )
+        adapter.notifyDataSetChanged()
+        listView.adapter = adapter
     }
     
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
