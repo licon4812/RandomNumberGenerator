@@ -25,7 +25,30 @@
     </Page.Resources>
 
     <Grid>
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="White" BorderThickness="2">
+        <Grid>
+            <NavigationView x:Name="NavigationViewControl" IsBackEnabled="False" IsBackButtonVisible="Collapsed" >
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Content="Number Generator" Icon="Home" x:Name="NumberGenerator"  />
+                    <NavigationViewItem Content="Decision Maker" Icon="Document" x:Name="DecisionMaker" />
+                </NavigationView.MenuItems>
+            </NavigationView>
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger
+                                MinWindowWidth="{x:Bind NavigationViewControl.CompactModeThresholdWidth}" />
+                        </VisualState.StateTriggers>
+
+                        <VisualState.Setters>
+                            <Setter Target="NavigationViewControl.PaneDisplayMode" Value="Top"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+        <Grid x:Name="ContentGrid" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="White" BorderThickness="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="271*"/>
                 <ColumnDefinition Width="471*"/>
@@ -33,9 +56,9 @@
             <TextBlock Name="RandomNumber" Margin="14,14,145,94" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="48"></TextBlock>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="364,0,0,0" Grid.Column="1">
                 <TextBlock x:Name="Min" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Min" Height="34" Width="64" FontSize="20" RequestedTheme="Default"/>
-                <TextBox Name="MinInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+                <TextBox x:Name="MinInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
                 <TextBlock x:Name="Max" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Max" Height="22" Width="51" FontSize="20" RequestedTheme="Default"/>
-                <TextBox Name="MaxInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBox x:Name="MaxInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <Button Grid.Column="0" Content="Generate" Margin="0,383,0,0" VerticalAlignment="Top" Height="86" Width="932" Click="Button_Click" Background="#0094FF" Grid.ColumnSpan="2"/>
         </Grid>

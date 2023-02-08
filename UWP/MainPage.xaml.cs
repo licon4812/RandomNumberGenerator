@@ -29,6 +29,7 @@ namespace RandomNumberGenerator
             MaxInput.Text = "100";
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(MinInput.Text, out int min) && int.TryParse(MaxInput.Text, out int max))
