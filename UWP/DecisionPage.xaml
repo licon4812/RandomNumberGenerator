@@ -1,13 +1,13 @@
 ﻿<Page
-    x:Class="RandomNumberGenerator.MainPage"
+    x:Class="RandomNumberGenerator.DecisionPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RandomNumberGenerator"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:iconPacks="using:MahApps.Metro.IconPacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:iconPacks="using:MahApps.Metro.IconPacks"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="XamlAutoFontFamily"/>
@@ -60,10 +60,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Name="RandomNumber" Margin="14,14,145,94" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="48"></TextBlock>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="364,0,0,0" Grid.Column="1">
-                <TextBlock x:Name="Min" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Min" Height="34" Width="64" FontSize="20" RequestedTheme="Default"/>
-                <TextBox x:Name="MinInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
-                <TextBlock x:Name="Max" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="Max" Height="22" Width="51" FontSize="20" RequestedTheme="Default"/>
-                <TextBox x:Name="MaxInput" HorizontalAlignment="Left" Margin="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <ListBox x:Name="List" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top"></ListBox>
             </StackPanel>
             <Button Grid.Column="0" Content="Generate" Margin="0,383,0,0" VerticalAlignment="Top" Height="86" Width="932" Click="Button_Click" Background="#0094FF" Grid.ColumnSpan="2"/>
         </Grid>
