@@ -9,7 +9,7 @@
   <Identity
     Name="23610AlickolliSoftware.RandomNumberGeneratorUWP"
     Publisher="CN=Alickolli Software"
-    Version="1.0.1.0" />
+    Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="a208e746-c859-4c15-b0e1-a64ccc2e42c8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
