@@ -81,8 +81,7 @@ class MainActivity : AppCompatActivity() {
         }
         decisions.add(decision.text.toString())
         val listView = findViewById<ListView>(R.id.choicesList)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, decisions )
-        adapter.notifyDataSetChanged()
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, decisions)
         listView.adapter = adapter
         decision.text.clear()
     }
