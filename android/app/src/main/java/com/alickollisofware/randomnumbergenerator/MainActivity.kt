@@ -93,6 +93,10 @@ class MainActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, decisions )
         adapter.notifyDataSetChanged()
         listView.adapter = adapter
+        val decision = findViewById<EditText>(R.id.choice)
+        decision.text.clear()
+        val result = findViewById<TextView>(R.id.result)
+        result.text = ""
     }
     
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
