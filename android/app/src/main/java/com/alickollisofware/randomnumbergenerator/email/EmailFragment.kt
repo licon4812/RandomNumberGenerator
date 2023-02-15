@@ -35,7 +35,8 @@ class EmailFragment : Fragment() {
         for (i in 0 until 10) {
             sb.append(chars[random.nextInt(chars.length)])
         }
-        sb.append("@example.com")
+        val emailArray = arrayOf("@gmail.com", "@yahoo.com", "@hotmail.com")
+        sb.append(emailArray[random.nextInt(emailArray.size)])
         emailEditText.setText(sb.toString())
     }
 }
