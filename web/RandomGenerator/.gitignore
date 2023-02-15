@@ -1,0 +1,60 @@
+# Build and publish files
+bin/
+obj/
+publish/
+
+# IDE and editor files
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+*.nupkg
+*.snupkg
+**/project.lock.json
+
+# MSTest Test Files
+testresults/
+
+# Visual Studio Test Files
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NPM package directories
+node_modules/
+npm-debug.log
+
+# Output files
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+Any CPU/
+*.exe
+*.pdb
+*.dll
+*.msi
+*.log
+*.cache
+*.cacheddeps
+*.bak
+*.updates
+
+# Editor files
+Thumbs.db
+Desktop.ini
+
+# macOS files
+.DS_Store
+
+# Rider files
+.idea/
+
+# Resharper files
+_ReSharper*/
+*.resharper
+*.DotSettings
