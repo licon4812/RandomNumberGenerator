@@ -11,5 +11,8 @@
         <item
             android:id="@+id/nav_decision"
             android:title="@string/menu_decision" />
+        <item
+            android:id="@+id/nav_email"
+            android:title="Email Generator" />
     </group>
 </menu>

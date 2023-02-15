@@ -15,5 +15,9 @@
         android:name="com.alickollisofware.randomnumbergenerator.decision.DecisionFragment"
         android:label="@string/menu_decision"
         tools:layout="@layout/fragment_decision" />
-
+    <fragment
+        android:id="@+id/nav_email"
+        android:name="com.alickollisofware.randomnumbergenerator.email.EmailFragment"
+        android:label="com.alickollisofware.randomnumbergenerator.email.EmailFragment"
+        tools:layout="@layout/fragment_email" />
 </navigation>
