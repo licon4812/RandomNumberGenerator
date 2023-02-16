@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/nav_email"
         android:name="com.alickollisofware.randomnumbergenerator.email.EmailFragment"
-        android:label="com.alickollisofware.randomnumbergenerator.email.EmailFragment"
+        android:label="Email Generator"
         tools:layout="@layout/fragment_email" />
 </navigation>
