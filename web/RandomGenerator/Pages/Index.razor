@@ -2,18 +2,18 @@
 
 <PageTitle>Number Generator</PageTitle>
 
-<h1>@_result</h1>
+<h1 class="results">@_result</h1><br/>
 <form onsubmit="@GenerateNumbers">
     <label>Min:</label>
     <input type="number" @bind="_min" /> <br/>
     <label>Max:</label>
-    <input type="number" @bind="_max" /><br />
+    <input type="number" @bind="_max"/><br />
     <button type="submit">Generate</button>
 </form>
 
 @code {
     private int _min;
-    private int _max;
+    private int _max = 100;
     private String _result = "Result";
 
     private void GenerateNumbers()
