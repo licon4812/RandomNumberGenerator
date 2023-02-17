@@ -1,0 +1,27 @@
+runtime: custom
+env: flex
+service: default
+automatic_scaling:
+  max_instances: 1
+  min_instances: 0
+
+handlers:
+- url: /
+  static_files: $PUBLISHED_PATH/index.html
+  upload: $PUBLISHED_PATH/index.html
+
+- url: /(.+\.(css|js|svg|png|jpg|ico))$
+  static_files: $PUBLISHED_PATH/\1
+  upload: $PUBLISHED_PATH/(.+)
+
+- url: /_framework/.*
+  static_files: $PUBLISHED_PATH/_framework/{0}
+  upload: $PUBLISHED_PATH/_framework/(.*)
+
+- url: /.*
+  static_files: $PUBLISHED_PATH/{0}
+  upload: $PUBLISHED_PATH/(.*)
+
+env_variables:
+  PUBLISHED_PATH: "bin/Release/net6.0/browser-wasm/publish"
+
