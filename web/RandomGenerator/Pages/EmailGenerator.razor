@@ -1,0 +1,29 @@
+﻿@using System.Text
+
+@page "/EmailGenerator"
+
+
+<PageTitle>Email Generator</PageTitle>
+
+<h1 class="results">@_result</h1>
+<br />
+<button type="button" onclick="@GenerateEmail">Generate</button>
+
+
+@code {
+    private String _result = "Result";
+
+    private void GenerateEmail()
+    {
+        var random = new Random();
+        var email = new StringBuilder();
+        var emailLength = random.Next(5, 10);
+        for (int i = 0; i < emailLength; i++)
+        {
+            email.Append((char)random.Next(97, 123));
+        }
+        var emailArray = new string[] { "@gmail.com", "@outlook.com", "@hotmail.com" };
+        email.Append(emailArray[random.Next(0, 3)]);
+        _result = email.ToString();
+    }
+}
