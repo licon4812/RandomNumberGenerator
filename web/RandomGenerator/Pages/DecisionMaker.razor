@@ -1,0 +1,52 @@
+﻿@page "/DecisionMaker"
+
+<PageTitle>Decision Maker</PageTitle>
+
+<h1 class="results">@_result</h1><br/>
+<form onsubmit="@GenerateDecision">
+    <label>Choice:</label>
+    <input type="text" @bind="_choice" /> <br/>
+    <button type="button" onclick="@AddDecision"> Add</button> <br/>
+    <button type="button" onclick="@Clear"> Clear</button> <br />
+    <button type="submit">Generate</button>
+</form>
+<div>
+    <ul>
+        @foreach(var choice in _choices)
+        {
+            <li>@choice</li>
+        }
+    </ul>
+</div>
+
+@code {
+    private string? _choice;
+    private string? _result = "Result";
+    private readonly List<string?> _choices = new List<string?>();
+    
+    private void AddDecision()
+    {
+        if(!String.IsNullOrEmpty(_choice))
+        {
+            _choices.Add(_choice);
+        }
+        
+    }
+    private void GenerateDecision()
+    {
+        if (_choices.Count == 0)
+        {
+            _result = "No choices";
+            return;
+        }
+        var random = new Random();
+        _result = _choices[random.Next(0, _choices.Count)];
+    }
+    
+    private void Clear()
+    {
+        _choices.Clear();
+        _result = "Result";
+        _choice = "";
+    }
+}
