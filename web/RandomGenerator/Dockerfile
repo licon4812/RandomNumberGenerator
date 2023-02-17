@@ -12,6 +12,8 @@ RUN dotnet publish "RandomGenerator.csproj" -c Release -o /app/publish /p:UseApp
 
 # Runtime Stage
 FROM nginx:alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=publish /app/publish/wwwroot /usr/share/nginx/html
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
