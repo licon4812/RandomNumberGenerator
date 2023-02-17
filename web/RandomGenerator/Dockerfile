@@ -19,4 +19,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 WORKDIR /app/wwwroot/_framework
-CMD "dotnet RandomGenerator.dll"
+CMD "dotnet /app/wwwroot/_framework/RandomGenerator.dll"
