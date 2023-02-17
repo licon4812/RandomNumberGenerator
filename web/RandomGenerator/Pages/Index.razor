@@ -2,8 +2,23 @@
 
 <PageTitle>Number Generator</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>@_result</h1>
+<form onsubmit="@GenerateNumbers">
+    <label>Min:</label>
+    <input type="number" @bind="_min" /> <br/>
+    <label>Max:</label>
+    <input type="number" @bind="_max" /><br />
+    <button type="submit">Generate</button>
+</form>
 
-Welcome to your new app.
+@code {
+    private int _min;
+    private int _max;
+    private String _result = "Result";
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    private void GenerateNumbers()
+    {
+        var random = new Random();
+        _result = _min <= _max ? random.Next(_min, _max).ToString() : "Min must be less than Max";
+    }
+}
